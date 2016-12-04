@@ -1,0 +1,175 @@
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt
+\documentclass[
+10pt, % Main document font size
+a4paper, % Paper type, use 'letterpaper' for US Letter paper
+oneside, % One page layout (no page indentation)
+%twoside, % Two page layout (page indentation for binding and different headers)
+headinclude,footinclude, % Extra spacing for the header and footer
+BCOR5mm, % Binding correction
+]{scrartcl}
+\input{structure.tex} % Include the structure.tex file which specified the document structure and layout
+
+\hyphenation{Fortran hy-phen-ation} % Specify custom hyphenation points in words with dashes where you would like hyphenation to occur, or alternatively, don't put any dashes in a word to stop hyphenation altogether
+
+%----------------------------------------------------------------------------------------
+%	TITLE AND AUTHOR(S)
+%----------------------------------------------------------------------------------------
+\usepackage{fontspec}
+
+%\setmainfont{STKaiti}   
+\title{\normalfont\spacedallcaps{I don't care}} % The article title
+
+\author{\spacedlowsmallcaps{I am yangqi}} % The article author(s) - author affiliations need to be specified in the AUTHOR AFFILIATIONS block
+
+\date{} % An optional date to appear under the author(s)
+
+%----------------------------------------------------------------------------------------
+\usepackage{titletoc} 
+\setmainfont{STKaiti} 
+\setsansfont{STKaiti}
+\setmonofont{STKaiti}
+%\setmainfont[BoldFont=STHeiti]{STSong}
+%\setsansfont[BoldFont=Adobe Heiti Std]{STKaiti}}
+\begin{document}
+%----------------------------------------------------------------------------------------
+%	HEADERS
+%----------------------------------------------------------------------------------------
+%\renewcommand{\sectionmark}[1]{\markright{\spacedlowsmallcaps{#1}}} % The header for all pages (oneside) or for even pages (twoside)
+%\renewcommand{\subsectionmark}[1]{\markright{\thesubsection~#1}} % Uncomment when using the twoside option - this modifies the header on odd pages
+%\lehead{\mbox{\llap{\small\thepage\kern1em\color{halfgray} \vline}\color{halfgray}\hspace{0.5em}\rightmark\hfil}} % The header style
+
+%\pagestyle{scrheadings} % Enable the headers specified in this block
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS & LISTS OF FIGURES AND TABLES
+%----------------------------------------------------------------------------------------
+
+\maketitle % Print the title/author/date block
+%
+\setcounter{tocdepth}{3} % Set the depth of the table of contents to show sections and subsections only
+%
+\tableofcontents % Print the table of contents
+%
+%\listoffigures % Print the list of figures
+%
+%\listoftables % Print the list of tables
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+%\section*{Abstract} % This section will not appear in the table of contents due to the star (\section*)
+
+%\lipsum[1] % Dummy text
+
+%----------------------------------------------------------------------------------------
+%	AUTHOR AFFILIATIONS
+%----------------------------------------------------------------------------------------
+
+%{\let\thefootnote\relax\footnotetext{* \textit{Department of Biology, University of Examples, London, United Kingdom}}}
+
+%{\let\thefootnote\relax\footnotetext{\textsuperscript{1} \textit{Department of Chemistry, University of Examples, London, United Kingdom}}}
+
+%----------------------------------------------------------------------------------------
+
+\newpage % Start the article content on the second page, remove this if you have a longer abstract that goes onto the second page
+
+
+%----------------------------------------------------------------------------------------
+%	NLP-Blog
+%----------------------------------------------------------------------------------------
+
+
+\section{NLP-Blog}
+关键词：\subparagraph{}自然语言处理（NLP）.词向量（Word Vectors）.奇异值分解(Singular Value Decomposition). Skip-gram. 连续词袋（CBOW）,负采样样本（Negative Sampling）
+%A statement\footnote{Example of a footnote} requiring citation \cite{Figueredo:2009dg}.
+\subsection{\color{red}词向量}
+What: 词组用向量表示
+\\Why:\\\indent1.NLP转为ML问题，第一步就是将符号数学化\\\indent2词向量编码词组,使其代表N维空间中的一个点，点与点之间距离可以代表深层信息。每一个词向量的维度都可能会表征一些意义（物理含义）。例如，语义维度可以用来表明时态（过去与现在与未来），计数（单数与复数），和性别（男性与女性）
+\\How:编码方式：比如one-hot vector
+\subsubsection{\color{blue}one-hot vector}
+What:对词库中n个词，每个词在某个index下取到1，其余位置为0
+\\Disadvantge：\\\indent1.维数灾难\\\indent2.词向量无法表示词组相似性： (W$^{hotel}$)$^T$w$^{motel}$ = (W$^{hotel}$)$^T$w$^{cat}$ = 0[hotel和motel是近义词]。
+\\Improve:可以把词向量的维度降低一些，在这样一个子空间中，可能原本没有关联的词就关联起来了
+\subsection{\color{red}构造词向量方法-基于SVD}
+How：遍历所有的文本数据集，然后统计词出现的次数，接着用一个矩阵X来表示所有的次数情况，紧接着对X进行奇异值分解得到一个USV$^T$的分解。然后用U的行（rows）作为所有词表中词的词向量。对于矩阵X,有如下方法：
+\subsubsection{\color{blue}词-文档矩阵}
+What：行：文档M。列：词组V。
+\\How：遍历文件，词组i出现在文件j中，将Xij值加一。得到矩阵R|V|×M
+\subsubsection{\color{blue}基于窗口的共现矩阵}
+What：同上，将词频换成了相关性矩阵
+\\How: 固定大小窗口，统计每个词出现在窗口中次数。
+\\\indent 例如： I enjoy flying. || I like NLP. || I like deep learning. 
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.5\linewidth]{screenshot003}
+	\caption{基于窗口共现矩阵}
+	\label{fig:screenshot003}
+\end{figure}
+\subsubsection{\color{blue}奇异值分解}
+What:将矩阵用更小更简单的子矩阵的相乘来表示【机器学会抽取重要特征】
+\\Why:降维
+\\Example:PCA、数据(图像)压缩、搜索引擎语义层次检索LSI
+\\How: A = U$\Sigma$V$^T$ 并根据保留百分比保留k个维度.\indent【奇异值σ跟特征值类似，在矩阵Σ中也是从大到小排列，而且σ的减少特别的快，在很多情况下，前10\%甚至1\%的奇异值的和就占了全部的奇异值之和的99\%以上了。也就是说，我们也可以用前r大的奇异值来近似描述矩阵】
+\\Result: U作为词嵌入矩阵，对于词表中的每一个词，都用一个k维的向量表示
+%----------------------------------------------------------------------------------------
+%	YQ-Algorithm
+%----------------------------------------------------------------------------------------
+\newpage 
+\section{Algorithm}
+
+
+%------------------------------------------------
+
+\subsection{算法}
+\newpage 
+%----------------------------------------------------------------------------------------
+%	YQ-Machine-Learning
+%----------------------------------------------------------------------------------------
+\section{Machine-Learning}
+\subsection{\color{red}学习算法}
+\subsubsection{\color{blue}监督学习}
+What：数据集中每个样本都有“正确答案”，再根据样本作出预测
+\\Example:\\\indent 回归问题：\\\indent \indent What：推导出连续的输出。\\\indent \indent Example：房价分析／销量预测
+\\\indent 分类问题：\\\indent \indent What：推导出离散的输出。\\\indent \indent Example：乳腺肿瘤判断／垃圾邮件问题
+\subsubsection{\color{blue}无监督学习}
+What：交给算法大量数据，让算法为我们从数据中找出某种结构
+\\Example:\\\indent 聚类问题：\\\indent \indent How：谷歌news。同一主题的聚类
+\subsection{\color{red}第一个学习算法-单变量线性回归}
+What：只有一个特征(输入变量)
+\\\indent 回归：\\\indent \indent What:根据之前的数据预测一个准确输出值
+\\\indent 线性回归：\\\indent \indent What: 确定两种或两种以上变量间相互依赖的定量关系。y = w$\'$x + e
+\\How:
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.4\linewidth, height=0.15\textheight]{screenshot004}
+	\caption{监督学习算法工作方式}
+	\label{fig:screenshot004}
+\end{figure}
+\\\indent h的一种可能表达方式：h$_\theta$(x)  = $\theta_0$ + $\theta_1$x 因为只有一个特征(输入变量)， 这样的问题叫做单变量线性回归问题.
+\subsubsection{\color{blue}代价函数-用来求解线性回归方程参数}
+What:平方误差函数（平方误差代价函数）。
+\\How:建模误差的平方和: J($\theta_0$, $\theta_1$) = $\frac{1}{2m}\sum_{i=1}^m (h_\theta(x^i))-y^i)^2$
+\\\indent 目标：Min J($\theta_0$, $\theta_1$)
+\\\indent How：
+\\\indent 1. 代价函数(等高线图):在三维空间中存在一个值使得J($\theta_0$, $\theta_1$)最小
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.7\linewidth]{screenshot006}
+	\caption{代价函数-等高线图}
+	\label{fig:screenshot006}
+\end{figure}
+\\\indent 2. 需要算法【自动】找出使得J 最小化的$\theta_0$, $\theta_1$的值
+\subsubsection{\color{blue}梯度下降-求代价函数最小值}
+What:求函数最小值的算法
+\\How：随机选择一个参数的组合($\theta_0$, $\theta_1$,$\theta_2$, $\theta_3$)，计算代价函数，然后寻找下一个能让代价函数值下降最多的参数组合。直到到达一个局部最小值。【由于没有常识所有的参数组合，不能保证局部最小值】
+
+
+
+\end{document}
