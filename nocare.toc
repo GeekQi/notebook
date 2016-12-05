@@ -1,18 +1,22 @@
 \contentsline {section}{\numberline {1}NLP-Blog}{2}{section.1}
-\contentsline {subparagraph}{}{2}{section.1}
 \contentsline {subsection}{\numberline {1.1}\color {red}词向量}{2}{subsection.1.1}
 \contentsline {subsubsection}{\numberline {1.1.1}\color {blue}one-hot vector}{2}{subsubsection.1.1.1}
 \contentsline {subsection}{\numberline {1.2}\color {red}构造词向量方法-基于SVD}{2}{subsection.1.2}
 \contentsline {subsubsection}{\numberline {1.2.1}\color {blue}词-文档矩阵}{2}{subsubsection.1.2.1}
 \contentsline {subsubsection}{\numberline {1.2.2}\color {blue}基于窗口的共现矩阵}{2}{subsubsection.1.2.2}
-\contentsline {subsubsection}{\numberline {1.2.3}\color {blue}奇异值分解}{3}{subsubsection.1.2.3}
-\contentsline {section}{\numberline {2}Algorithm}{4}{section.2}
-\contentsline {subsection}{\numberline {2.1}算法}{4}{subsection.2.1}
-\contentsline {section}{\numberline {3}Machine-Learning}{5}{section.3}
-\contentsline {subsection}{\numberline {3.1}\color {red}学习算法}{5}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}\color {blue}监督学习}{5}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.2}\color {blue}无监督学习}{5}{subsubsection.3.1.2}
-\contentsline {subsection}{\numberline {3.2}\color {red}第一个学习算法-单变量线性回归}{5}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}\color {blue}代价函数-用来求解线性回归方程参数}{5}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}\color {blue}梯度下降-求代价函数最小值}{6}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {1.2.3}\color {blue}奇异值分解构造词向量矩阵}{3}{subsubsection.1.2.3}
+\contentsline {subsection}{\numberline {1.3}\color {red}构造词向量方法-基于迭代的方法}{3}{subsection.1.3}
+\contentsline {subsubsection}{\numberline {1.3.1}\color {blue}语言模型（1-gram， 2-gram)}{3}{subsubsection.1.3.1}
+\contentsline {subsubsection}{\numberline {1.3.2}\color {blue}连续词袋模型CBOW-语言模型的进步}{3}{subsubsection.1.3.2}
+\contentsline {subsubsection}{\numberline {1.3.3}\color {blue}Skip-Gram模型-与CBOW相对应}{4}{subsubsection.1.3.3}
+\contentsline {subsubsection}{\numberline {1.3.4}\color {blue}负面抽样(Negative Samplint)-简化目标函数求值}{5}{subsubsection.1.3.4}
+\contentsline {section}{\numberline {2}Algorithm}{6}{section.2}
+\contentsline {subsection}{\numberline {2.1}算法}{6}{subsection.2.1}
+\contentsline {section}{\numberline {3}Machine-Learning}{7}{section.3}
+\contentsline {subsection}{\numberline {3.1}\color {red}学习算法}{7}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}\color {blue}监督学习}{7}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}\color {blue}无监督学习}{7}{subsubsection.3.1.2}
+\contentsline {subsection}{\numberline {3.2}\color {red}第一个学习算法-单变量线性回归}{7}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}\color {blue}代价函数-用来求解线性回归方程参数}{7}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}\color {blue}梯度下降-求代价函数最小值}{8}{subsubsection.3.2.2}
 \contentsfinish 

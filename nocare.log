@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.12.2)  4 DEC 2016 23:18
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.12.2)  5 DEC 2016 15:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1078,32 +1078,32 @@ Package hyperref Warning: pdfproducer: xdvipdfmx will use its own setting
  (./nocare.aux)
 \openout1 = `nocare.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 39.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 39.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 41.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 41.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    ... okay on input line 41.
 \AtBeginShipoutBox=\box49
-Package hyperref Info: Link coloring ON on input line 39.
+Package hyperref Info: Link coloring ON on input line 41.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1114,16 +1114,16 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 \c@section@level=\count166
 LaTeX Info: Redefining \Ref on input line 513.
 )
-LaTeX Info: Redefining \ref on input line 39.
-LaTeX Info: Redefining \pageref on input line 39.
-LaTeX Info: Redefining \nameref on input line 39.
+LaTeX Info: Redefining \ref on input line 41.
+LaTeX Info: Redefining \pageref on input line 41.
+LaTeX Info: Redefining \nameref on input line 41.
 
 (./nocare.out) (./nocare.out)
 \@outlinefile=\write3
 \openout3 = `nocare.out'.
 
-LaTeX Info: Redefining \Ref on input line 39.
-LaTeX Info: Redefining \microtypecontext on input line 39.
+LaTeX Info: Redefining \Ref on input line 41.
+LaTeX Info: Redefining \microtypecontext on input line 41.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
@@ -1142,9 +1142,9 @@ Package caption Info: End \AtBeginDocument code.
 *** some features of other encodings may conflict, resulting in poor output.
 
 LaTeX Font Warning: Font shape `EU1/STKaiti(0)/bx/n' undefined
-(Font)              using `EU1/STKaiti(0)/m/n' instead on input line 55.
+(Font)              using `EU1/STKaiti(0)/m/n' instead on input line 57.
 
-LaTeX Font Info:    Try loading font information for OT1+pplj on input line 55.
+LaTeX Font Info:    Try loading font information for OT1+pplj on input line 57.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1pplj.fd
 File: ot1pplj.fd 2004/09/06 font definitions for OT1/pplj.
@@ -1152,7 +1152,7 @@ File: ot1pplj.fd 2004/09/06 font definitions for OT1/pplj.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/microtype/mt-ppl.cfg
 File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 )
-LaTeX Font Info:    Try loading font information for U+zeur on input line 55.
+LaTeX Font Info:    Try loading font information for U+zeur on input line 57.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/eulervm/uzeur.fd
 File: uzeur.fd 2005/01/11 v4.0 (WaS)
@@ -1160,7 +1160,7 @@ File: uzeur.fd 2005/01/11 v4.0 (WaS)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/microtype/mt-eur.cfg
 File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
 )
-LaTeX Font Info:    Try loading font information for U+zeus on input line 55.
+LaTeX Font Info:    Try loading font information for U+zeus on input line 57.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/eulervm/uzeus.fd
 File: uzeus.fd 2005/01/11 v4.0 (WaS)
@@ -1168,12 +1168,12 @@ File: uzeus.fd 2005/01/11 v4.0 (WaS)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/microtype/mt-eus.cfg
 File: mt-eus.cfg 2006/07/28 v1.2 microtype config. file: AMS Euler Script (RS)
 )
-LaTeX Font Info:    Try loading font information for U+zeuex on input line 55.
+LaTeX Font Info:    Try loading font information for U+zeuex on input line 57.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/eulervm/uzeuex.fd
 File: uzeuex.fd 2005/01/11 v4.0 (WaS)
 )
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 55.
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 57.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1zplm.fd
@@ -1192,9 +1192,9 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 
 LaTeX Font Warning: Font shape `EU1/STKaiti(0)/m/sc' undefined
-(Font)              using `EU1/STKaiti(0)/m/n' instead on input line 55.
+(Font)              using `EU1/STKaiti(0)/m/n' instead on input line 57.
 
-Package tocbasic Info: character protrusion at toc deactivated on input line 57
+Package tocbasic Info: character protrusion at toc deactivated on input line 59
 .
 (./nocare.toc)
 \tf@toc=\write4
@@ -1206,19 +1206,15 @@ Package tocbasic Info: character protrusion at toc deactivated on input line 57
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 92.
+(hyperref)                removing `\@ifnextchar' on input line 94.
 
 
 LaTeX Font Warning: Font shape `EU1/STKaiti(0)/m/it' undefined
-(Font)              using `EU1/STKaiti(0)/m/n' instead on input line 96.
+(Font)              using `EU1/STKaiti(0)/m/n' instead on input line 98.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 96.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 100.
+(hyperref)                removing `\@ifnextchar' on input line 98.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1226,66 +1222,113 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 105.
+(hyperref)                removing `\@ifnextchar' on input line 104.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 107.
 
 File: screenshot003.bmp Graphic file (type QTm)
-<use  "screenshot003.bmp" > [2]
+<use  "screenshot003.bmp" >
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 115.
+(hyperref)                removing `\@ifnextchar' on input line 117.
 
-[3] [4]
+[2]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 136.
+(hyperref)                removing `\@ifnextchar' on input line 124.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 127.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\@ifnextchar' on input line 137.
 
+File: screenshot008.bmp Graphic file (type QTm)
+<use  "screenshot008.bmp" >
+File: screenshot009.bmp Graphic file (type QTm)
+ <use  "screenshot009.bmp" >
+Underfull \hbox (badness 10000) in paragraph at lines 138--167
+
+ []
+
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 141.
+(hyperref)                removing `\@ifnextchar' on input line 167.
+
+File: screenshot010.bmp Graphic file (type QTm)
+<use  "screenshot010.bmp" >
+Overfull \hbox (17.53229pt too wide) in paragraph at lines 168--184
+[][]\EU1/STKaiti(0)/m/it/10 f. 我 们 希 望 产 生 概 率 分 布 与 期 望 真 实 概 率 分 布$\U/zeur/m/
+n/10 y[]\OT1/pplj/m/n/10 , .., \U/zeur/m/n/10 y[]\OT1/pplj/m/n/10 , \U/zeur/m/n
+/10 y[]\OT1/pplj/m/n/10 , .., \U/zeur/m/n/10 y[]$\EU1/STKaiti(0)/m/it/10 相
+ []
+
+[3]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 184.
+
+File: screenshot011.bmp Graphic file (type QTm)
+<use  "screenshot011.bmp" > [4]
+
+Package hyperref Warning: Ignoring empty anchor on input line 205.
+
+[5] [6]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 224.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 144.
+(hyperref)                removing `\@ifnextchar' on input line 225.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 147.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 229.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 232.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 235.
 
 File: screenshot004.bmp Graphic file (type QTm)
 <use  "screenshot004.bmp" >
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 156.
+(hyperref)                removing `\@ifnextchar' on input line 244.
 
 File: screenshot006.bmp Graphic file (type QTm)
 <use  "screenshot006.bmp" >
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 169.
+(hyperref)                removing `\@ifnextchar' on input line 257.
 
-[5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 175.
- [6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 175.
+[7]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 263.
+ [8]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 263.
  (./nocare.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 175.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 175.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 263.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 263.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 175.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 263.
  ) 
 Here is how much of TeX's memory you used:
- 29504 strings out of 493591
- 550865 string characters out of 6143546
- 795127 words of memory out of 5000000
- 32611 multiletter control sequences out of 15000+600000
- 20187 words of font info for 65 fonts, out of 8000000 for 9000
+ 29518 strings out of 493591
+ 551139 string characters out of 6143546
+ 799127 words of memory out of 5000000
+ 32620 multiletter control sequences out of 15000+600000
+ 20195 words of font info for 66 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
- 58i,22n,92p,10472b,537s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,22n,87p,10472b,537s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on nocare.pdf (6 pages).
+Output written on nocare.pdf (8 pages).

@@ -1,3 +1,4 @@
+% !TeX spellcheck = en_US
 
 %----------------------------------------------------------------------------------------
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
@@ -21,7 +22,7 @@ BCOR5mm, % Binding correction
 %	TITLE AND AUTHOR(S)
 %----------------------------------------------------------------------------------------
 \usepackage{fontspec}
-
+\usepackage{xcolor}
 %\setmainfont{STKaiti}   
 \title{\normalfont\spacedallcaps{I don't care}} % The article title
 
@@ -34,6 +35,7 @@ BCOR5mm, % Binding correction
 \setmainfont{STKaiti} 
 \setsansfont{STKaiti}
 \setmonofont{STKaiti}
+
 %\setmainfont[BoldFont=STHeiti]{STSong}
 %\setsansfont[BoldFont=Adobe Heiti Std]{STKaiti}}
 \begin{document}
@@ -87,7 +89,7 @@ BCOR5mm, % Binding correction
 
 
 \section{NLP-Blog}
-关键词：\subparagraph{}自然语言处理（NLP）.词向量（Word Vectors）.奇异值分解(Singular Value Decomposition). Skip-gram. 连续词袋（CBOW）,负采样样本（Negative Sampling）
+关键词：\\\indent 自然语言处理（NLP）.词向量（Word Vectors）.奇异值分解(Singular Value Decomposition). Skip-gram. 连续词袋（CBOW）,负采样样本（Negative Sampling）
 %A statement\footnote{Example of a footnote} requiring citation \cite{Figueredo:2009dg}.
 \subsection{\color{red}词向量}
 What: 词组用向量表示
@@ -112,22 +114,105 @@ What：同上，将词频换成了相关性矩阵
 	\caption{基于窗口共现矩阵}
 	\label{fig:screenshot003}
 \end{figure}
-\subsubsection{\color{blue}奇异值分解}
+\subsubsection{\color{blue}奇异值分解构造词向量矩阵}
 What:将矩阵用更小更简单的子矩阵的相乘来表示【机器学会抽取重要特征】
 \\Why:降维
 \\Example:PCA、数据(图像)压缩、搜索引擎语义层次检索LSI
-\\How: A = U$\Sigma$V$^T$ 并根据保留百分比保留k个维度.\indent【奇异值σ跟特征值类似，在矩阵Σ中也是从大到小排列，而且σ的减少特别的快，在很多情况下，前10\%甚至1\%的奇异值的和就占了全部的奇异值之和的99\%以上了。也就是说，我们也可以用前r大的奇异值来近似描述矩阵】
-\\Result: U作为词嵌入矩阵，对于词表中的每一个词，都用一个k维的向量表示
+\\How: \\\indent A = U$\Sigma$V$^T$ 并根据保留百分比保留k个维度.\indent【奇异值σ跟特征值类似，在矩阵Σ中也是从大到小排列，而且σ的减少特别的快，在很多情况下，前10\%甚至1\%的奇异值的和就占了全部的奇异值之和的99\%以上了。也就是说，我们也可以用前r大的奇异值来近似描述矩阵】
+\\Result: \\\indent U作为词嵌入矩阵，对于词表中的每一个词，都用一个k维的向量表示
+\\Disadvantage:\\\indent 1.矩阵稀疏，纬度高且经常变化\\\indent 2.复杂度：$O(n^2)$(SVD).且需要对矩阵X处理
+\subsection{\color{red}构造词向量方法-基于迭代的方法}
+Why：为了解决奇异值分解矩阵的问题
+What：可以一步步迭代学习的模型，最终得到每个单词基于上下文的条件概率
+\subsubsection{\color{blue}语言模型（1-gram， 2-gram)}
+一元模型：
+\begin{displaymath}
+P(w_1, w_2, w_3...w_n) = \prod_{i=1}^{N}P(w_i)\\
+\end{displaymath}
+\\ 二元模型：
+\begin{displaymath}
+P(w_1, w_2, w_3...w_n) = \prod_{i=1}^{N}P(w_i | w_{i-1})
+\end{displaymath}
+\\Disadvantage:只考虑一个词语依赖相邻词语的关系
+\subsubsection{\color{blue}连续词袋模型CBOW-语言模型的进步}
+What：以句子其他部分为上下文，预测或产生中心词语。
+\\How：【如下图】
+\\\indent 1.模型已知参数：将句子表示为一些onehot向量: x(c)
+\\\indent 2.模型输出：y(c)[其实只有一个输出]
+\\\indent 3.模型未知参数：两矩阵：V $\in R^{n*|V|}$ 和 U $\in R^{|V|*n}$ ，n任意。
+\\\indent \indent V:输入词矩阵. 词语$w_i$作为输入时，V的第i列$v_i$为$w_i$的输入向量
+\\\indent \indent U:输出词矩阵. 词语$w_j$作为输出时，V的第j列$v_j$为$w_j$的输出向量
+\\\indent 4.模型过程：
+\\\indent \indent a.产生onehot向量$(x^{c-m}...x^{c-1},x^{c+1}...x^{c+m})$
+\\\indent \indent b.得到上下文嵌入词向量(输入)：
+\\\indent \indent $(v_{c-m+1} = Vx^{(c-m+1)},...,v_{c+m} = Vx^{(c+m)})$
+\\\indent \indent c.向量取平均：$\hat{v}=\frac{2m}{v_{c-m}+v_{c-m+1}+...+v_{c+m}}$
+\\\indent \indent d.得到得分向量：z = U$\hat{v}$并转化成概率分布形式$\hat{y}=softmax(z)$
+\\\indent \indent e.我们希望产生的概率分布与期望的真实词语的onehot向量相匹配
+\\\\如何找到U、V--- 需要有一个目标函数
+\\What:评估差异／损失的函数y与$\hat{y}$--交叉熵$H(\hat{y}, y)= -y_i log(\hat{y_i})$
+\\How: 通过如下优化函数，用梯度下降法更新每个相关词向量$u_c$和$v_j$
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.7\linewidth]{screenshot008}
+	\caption*{}
+	\label{fig:screenshot008}
+\end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.7\linewidth]{screenshot009}
+	\caption{左：CBOW模型过程--右：Skip-Gram模型过程}
+	\label{fig:screenshot009}
+\end{figure}
+\subsubsection{\color{blue}Skip-Gram模型-与CBOW相对应}
+What：以中心词为输入，预测周围词。则中心词为上下文
+\\How：【如上图】
+\\\indent 模型过程：
+\\\indent \indent a.产生onehot向量x
+\\\indent \indent b.得到上下文嵌入词向量(输入)：$v_c = Vx$
+\\\indent \indent c.向量取平均[直接是自身]：$v_c = v_c$
+\\\indent \indent d.通过u=U$v_c$得到2m个得分向量：$u_{c-m},..,u_{c-1},u_{c+1},u{c+m}$
+\\\indent \indent e.并转化成概率分布形式$y=softmax(u)$
+\\\indent \indent f.我们希望产生概率分布与期望真实概率分布$y^{c-m},..,y^{c-1},y^{c+1},..,y^{c+m}$相匹配
+\\\indent 引入朴素贝叶斯假设将联合概率拆分成独立概率相乘【给出中心词，所有输出词完全独立】，再用随机梯度下降更新未知参数。
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.7\linewidth]{screenshot010}
+	\caption*{}
+	\label{fig:screenshot010}
+\end{figure}
+\subsubsection{\color{blue}负面抽样(Negative Samplint)-简化目标函数求值}
+What：【参考文献下方】目标函数对整个单词表|V|的求和计算量巨大。要简化，则就近似。
+\\How:对每一步训练，不去循环整个单词表，而是抽象一些负面例子。
+\\\indent 从噪声分布$P_n(w)$中抽样，其概率分布与单词表中频率相匹配。
+\\\indent 则只需要更新：目标函数／梯度／更新规则
+\\负面抽样-基于SkipGram模型，但对不同目标函数优化
+\\\indent a.对“词-上下文”对（w, c).令P(D=1|w, c)为(w, c)来自语料库的概率
+\\\indent a.令P(D=0|w, c)是不来自语料库的概率
+\\\indent b.对P(D=1|w, c)用sigmoid函数建模：$P(D=1|w, \theta, c) = \frac{1}{1+e^{(-v_c^Tv_w)}}$
+\\\indent c.需要新的目标函数:如果(w, c)来自语料库,目标函数能最大化P(D=1|w, c)
+\\\indent d.对这两个概率用最大似然
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.8\linewidth]{screenshot011}
+	\caption*{}
+	\label{fig:screenshot011}
+\end{figure}
+\subsection{词向量的评价}
+{\let\thefootnote\relax\footnotetext{ \textit{Mikolov ET AL.《Distributed Representations of Words and Phrases and their Compositionality》}}}
+
+\newpage 
 %----------------------------------------------------------------------------------------
 %	YQ-Algorithm
 %----------------------------------------------------------------------------------------
-\newpage 
+
 \section{Algorithm}
 
 
 %------------------------------------------------
 
 \subsection{算法}
+
 \newpage 
 %----------------------------------------------------------------------------------------
 %	YQ-Machine-Learning
@@ -157,7 +242,7 @@ What：只有一个特征(输入变量)
 What:平方误差函数（平方误差代价函数）。
 \\How:建模误差的平方和: J($\theta_0$, $\theta_1$) = $\frac{1}{2m}\sum_{i=1}^m (h_\theta(x^i))-y^i)^2$
 \\\indent 目标：Min J($\theta_0$, $\theta_1$)
-\\\indent How：
+\\\indent How：【如下图】
 \\\indent 1. 代价函数(等高线图):在三维空间中存在一个值使得J($\theta_0$, $\theta_1$)最小
 \begin{figure}[!htb]
 	\centering
